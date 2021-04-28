@@ -1,4 +1,4 @@
-# Health_Tracking_Android_App
+# E-Tour
 ### Git rules
 + Không push code lên branch master/main, chỉ được push và tạo pull request từ branch feature vào branch develop.
 + Commit và push code lên github trong khoảng thời gian từ 10h sáng đến 10h tối, không nhận bất kì lần pull request nào quá khoảng thời gian này.
@@ -7,11 +7,11 @@
 + Không được phép merge code.
 ### Hướng dẫn dùng Git Bash
 #Bước 1: Clone Project
-> git clone https://github.com/TeaTung/Health_Tracking_Android_App.git
+> git clone https://github.com/TeaTung/E-Tour.git
 
 hoặc
 
-> git clone http://github.com/TeaTung/Health_Tracking_Android_App.git
+> git clone https://github.com/TeaTung/E-Tour.git
 
 ![image](https://user-images.githubusercontent.com/67773933/115963852-8193a800-a54b-11eb-9fbd-e3a0b9833212.png)
 
