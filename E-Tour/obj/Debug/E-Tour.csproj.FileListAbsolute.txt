@@ -1,0 +1,13 @@
+C:\E-Tour\E-Tour\E-Tour\bin\Debug\E-Tour.exe.config
+C:\E-Tour\E-Tour\E-Tour\bin\Debug\E-Tour.exe
+C:\E-Tour\E-Tour\E-Tour\bin\Debug\E-Tour.pdb
+C:\E-Tour\E-Tour\E-Tour\bin\Debug\Guna.UI.dll
+C:\E-Tour\E-Tour\E-Tour\bin\Debug\Guna.UI2.dll
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.csprojAssemblyReference.cache
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E_Tour.loginForm.resources
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E_Tour.Properties.Resources.resources
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.csproj.GenerateResource.cache
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.csproj.CoreCompileInputs.cache
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.csproj.CopyComplete
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.exe
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.pdb
