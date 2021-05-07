@@ -11,3 +11,7 @@ C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.csproj.CoreCompileInputs.cache
 C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.csproj.CopyComplete
 C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.exe
 C:\E-Tour\E-Tour\E-Tour\obj\Debug\E-Tour.pdb
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E_Tour.signupForm.resources
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E_Tour.bookedTour.resources
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E_Tour.bookingForm.resources
+C:\E-Tour\E-Tour\E-Tour\obj\Debug\E_Tour.tourEditorForm.resources

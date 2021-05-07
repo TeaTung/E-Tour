@@ -29,6 +29,7 @@ namespace E_Tour
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.loginBtn = new Guna.UI2.WinForms.Guna2Button();
             this.passwordTb = new Guna.UI.WinForms.GunaLineTextBox();
             this.usernameTb = new Guna.UI.WinForms.GunaLineTextBox();
@@ -36,6 +37,7 @@ namespace E_Tour
             this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
             this.gunaLineTextBox2 = new Guna.UI.WinForms.GunaLineTextBox();
             this.forgotLb = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
             // 
             // loginBtn
@@ -49,7 +51,7 @@ namespace E_Tour
             this.loginBtn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.HoverState.Parent = this.loginBtn;
-            this.loginBtn.Location = new System.Drawing.Point(980, 663);
+            this.loginBtn.Location = new System.Drawing.Point(981, 646);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.ShadowDecoration.Parent = this.loginBtn;
             this.loginBtn.Size = new System.Drawing.Size(153, 45);
@@ -147,11 +149,16 @@ namespace E_Tour
             this.forgotLb.AutoSize = true;
             this.forgotLb.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(70)))), ((int)(((byte)(175)))));
-            this.forgotLb.Location = new System.Drawing.Point(871, 624);
+            this.forgotLb.Location = new System.Drawing.Point(871, 615);
             this.forgotLb.Name = "forgotLb";
             this.forgotLb.Size = new System.Drawing.Size(198, 28);
             this.forgotLb.TabIndex = 9;
             this.forgotLb.Text = "Already Have Account?";
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // signupForm
             // 
@@ -187,5 +194,6 @@ namespace E_Tour
         private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox1;
         private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox2;
         private Guna.UI.WinForms.GunaLabel forgotLb;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

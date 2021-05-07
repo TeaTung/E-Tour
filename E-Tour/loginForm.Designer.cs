@@ -106,6 +106,7 @@ namespace E_Tour
             this.newLb.Size = new System.Drawing.Size(128, 28);
             this.newLb.TabIndex = 3;
             this.newLb.Text = "Create Acount";
+            this.newLb.Click += new System.EventHandler(this.newLb_Click);
             // 
             // forgotLb
             // 
@@ -117,6 +118,7 @@ namespace E_Tour
             this.forgotLb.Size = new System.Drawing.Size(151, 28);
             this.forgotLb.TabIndex = 4;
             this.forgotLb.Text = "Forgot Password?";
+            this.forgotLb.Click += new System.EventHandler(this.forgotLb_Click);
             // 
             // loginForm
             // 
