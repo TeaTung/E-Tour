@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="E_TOURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="CitizenID/Passport" Type="int" />
+    <Property Name="Expiration" Type="smalldatetime" />
+    <Property Name="Gender" Type="char" MaxLength="10" />
+    <Property Name="Account" Type="nchar" MaxLength="20" />
+    <Property Name="Password" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DASHBOARD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookTime" Type="smalldatetime" />
+    <Property Name="IDCustomer" Type="int" />
+    <Property Name="IDTour" Type="int" />
+    <Property Name="IsPaid" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReturnedMoney" Type="money" />
+    <Property Name="NumberOfTicket" Type="int" />
+  </EntityType>
+  <EntityType Name="STAFF">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="int" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TICKET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TourID" Type="int" Nullable="false" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Number" Type="int" />
+    <Property Name="Sale" Type="bit" />
+  </EntityType>
+  <EntityType Name="TOUR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StartPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="50" />
+    <Property Name="TourType" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeConsumed" Type="nvarchar" MaxLength="20" />
+    <Property Name="StartDay" Type="smalldatetime" />
+    <Property Name="TourDetail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_DASHBOARD_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+    <End Role="DASHBOARD" Type="Self.DASHBOARD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DASHBOARD">
+        <PropertyRef Name="IDCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DASHBOARD_TOUR">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+    <End Role="DASHBOARD" Type="Self.DASHBOARD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DASHBOARD">
+        <PropertyRef Name="IDTour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TICKET_TOUR">
+    <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+    <End Role="TICKET" Type="Self.TICKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TICKET">
+        <PropertyRef Name="TourID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="E_TOURModelStoreContainer">
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DASHBOARD" EntityType="Self.DASHBOARD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STAFF" EntityType="Self.STAFF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TICKET" EntityType="Self.TICKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DASHBOARD_CUSTOMER" Association="Self.FK_DASHBOARD_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="DASHBOARD" EntitySet="DASHBOARD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DASHBOARD_TOUR" Association="Self.FK_DASHBOARD_TOUR">
+      <End Role="TOUR" EntitySet="TOUR" />
+      <End Role="DASHBOARD" EntitySet="DASHBOARD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TICKET_TOUR" Association="Self.FK_TICKET_TOUR">
+      <End Role="TOUR" EntitySet="TOUR" />
+      <End Role="TICKET" EntitySet="TICKET" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

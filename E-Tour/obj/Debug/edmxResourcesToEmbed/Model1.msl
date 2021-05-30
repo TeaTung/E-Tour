@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="E_TOURModelStoreContainer" CdmEntityContainer="E_TOUREntities">
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="E_TOURModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CitizenID_Passport" ColumnName="CitizenID/Passport" />
+          <ScalarProperty Name="Expiration" ColumnName="Expiration" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DASHBOARDs">
+      <EntityTypeMapping TypeName="E_TOURModel.DASHBOARD">
+        <MappingFragment StoreEntitySet="DASHBOARD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BookTime" ColumnName="BookTime" />
+          <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
+          <ScalarProperty Name="IDTour" ColumnName="IDTour" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="ReturnedMoney" ColumnName="ReturnedMoney" />
+          <ScalarProperty Name="NumberOfTicket" ColumnName="NumberOfTicket" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAFFs">
+      <EntityTypeMapping TypeName="E_TOURModel.STAFF">
+        <MappingFragment StoreEntitySet="STAFF">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TICKETs">
+      <EntityTypeMapping TypeName="E_TOURModel.TICKET">
+        <MappingFragment StoreEntitySet="TICKET">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TourID" ColumnName="TourID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOURs">
+      <EntityTypeMapping TypeName="E_TOURModel.TOUR">
+        <MappingFragment StoreEntitySet="TOUR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartPoint" ColumnName="StartPoint" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="TourType" ColumnName="TourType" />
+          <ScalarProperty Name="TimeConsumed" ColumnName="TimeConsumed" />
+          <ScalarProperty Name="StartDay" ColumnName="StartDay" />
+          <ScalarProperty Name="TourDetail" ColumnName="TourDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

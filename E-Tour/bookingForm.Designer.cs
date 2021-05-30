@@ -30,14 +30,13 @@ namespace E_Tour
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.departureCb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.destinationCb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.startDtp = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.durationCb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.ticketsCb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.aboardCb = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +56,15 @@ namespace E_Tour
             this.bookBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.aboardcheck = new System.Windows.Forms.Label();
+            this.numberticket = new System.Windows.Forms.Label();
+            this.ticketTb = new System.Windows.Forms.TextBox();
+            this.IDLb = new System.Windows.Forms.Label();
+            this.departureLb = new System.Windows.Forms.Label();
+            this.destinationLb = new System.Windows.Forms.Label();
+            this.startdateLb = new System.Windows.Forms.Label();
+            this.durationLb = new System.Windows.Forms.Label();
+            this.priceTb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +86,7 @@ namespace E_Tour
             this.departureCb.ShadowDecoration.Parent = this.departureCb;
             this.departureCb.Size = new System.Drawing.Size(196, 36);
             this.departureCb.TabIndex = 0;
+            this.departureCb.SelectedIndexChanged += new System.EventHandler(this.departureCb_SelectedIndexChanged);
             // 
             // destinationCb
             // 
@@ -97,6 +106,7 @@ namespace E_Tour
             this.destinationCb.ShadowDecoration.Parent = this.destinationCb;
             this.destinationCb.Size = new System.Drawing.Size(196, 36);
             this.destinationCb.TabIndex = 1;
+            this.destinationCb.SelectedIndexChanged += new System.EventHandler(this.destinationCb_SelectedIndexChanged);
             // 
             // startDtp
             // 
@@ -128,31 +138,18 @@ namespace E_Tour
             this.durationCb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.durationCb.HoverState.Parent = this.durationCb;
             this.durationCb.ItemHeight = 30;
+            this.durationCb.Items.AddRange(new object[] {
+            "1 day",
+            "2 days +1 night",
+            "3 days + 2 nights",
+            "4 days + 3 nights",
+            "5 days + 4 nights"});
             this.durationCb.ItemsAppearance.Parent = this.durationCb;
             this.durationCb.Location = new System.Drawing.Point(188, 256);
             this.durationCb.Name = "durationCb";
             this.durationCb.ShadowDecoration.Parent = this.durationCb;
             this.durationCb.Size = new System.Drawing.Size(196, 36);
             this.durationCb.TabIndex = 3;
-            // 
-            // ticketsCb
-            // 
-            this.ticketsCb.BackColor = System.Drawing.Color.Transparent;
-            this.ticketsCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ticketsCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ticketsCb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ticketsCb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ticketsCb.FocusedState.Parent = this.ticketsCb;
-            this.ticketsCb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ticketsCb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.ticketsCb.HoverState.Parent = this.ticketsCb;
-            this.ticketsCb.ItemHeight = 30;
-            this.ticketsCb.ItemsAppearance.Parent = this.ticketsCb;
-            this.ticketsCb.Location = new System.Drawing.Point(583, 119);
-            this.ticketsCb.Name = "ticketsCb";
-            this.ticketsCb.ShadowDecoration.Parent = this.ticketsCb;
-            this.ticketsCb.Size = new System.Drawing.Size(169, 36);
-            this.ticketsCb.TabIndex = 4;
             // 
             // aboardCb
             // 
@@ -171,38 +168,40 @@ namespace E_Tour
             this.aboardCb.UncheckedState.BorderThickness = 0;
             this.aboardCb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.aboardCb.UncheckedState.Parent = this.aboardCb;
+            this.aboardCb.CheckedChanged += new System.EventHandler(this.aboardCb_CheckedChanged);
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.guna2DataGridView1.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(46, 375);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
+            this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.guna2DataGridView1.Size = new System.Drawing.Size(706, 272);
             this.guna2DataGridView1.TabIndex = 6;
@@ -218,7 +217,7 @@ namespace E_Tour
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
             this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -228,6 +227,7 @@ namespace E_Tour
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // label1
             // 
@@ -275,7 +275,7 @@ namespace E_Tour
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1066, 233);
+            this.label5.Location = new System.Drawing.Point(841, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 26);
             this.label5.TabIndex = 11;
@@ -285,7 +285,7 @@ namespace E_Tour
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(841, 286);
+            this.label6.Location = new System.Drawing.Point(841, 322);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 26);
             this.label6.TabIndex = 12;
@@ -305,7 +305,7 @@ namespace E_Tour
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(841, 339);
+            this.label8.Location = new System.Drawing.Point(841, 363);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 26);
             this.label8.TabIndex = 14;
@@ -345,6 +345,7 @@ namespace E_Tour
             this.passportTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passportTb.HoverState.Parent = this.passportTb;
             this.passportTb.Location = new System.Drawing.Point(1009, 463);
+            this.passportTb.Margin = new System.Windows.Forms.Padding(4);
             this.passportTb.Name = "passportTb";
             this.passportTb.PasswordChar = '\0';
             this.passportTb.PlaceholderText = "";
@@ -389,7 +390,7 @@ namespace E_Tour
             this.payBtn.CheckedState.Parent = this.payBtn;
             this.payBtn.CustomImages.Parent = this.payBtn;
             this.payBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.payBtn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payBtn.ForeColor = System.Drawing.Color.White;
             this.payBtn.HoverState.Parent = this.payBtn;
             this.payBtn.Location = new System.Drawing.Point(1071, 624);
@@ -398,6 +399,7 @@ namespace E_Tour
             this.payBtn.Size = new System.Drawing.Size(153, 45);
             this.payBtn.TabIndex = 20;
             this.payBtn.Text = "Book & Pay";
+            this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
             // bookBtn
             // 
@@ -409,7 +411,7 @@ namespace E_Tour
             this.bookBtn.CheckedState.Parent = this.bookBtn;
             this.bookBtn.CustomImages.Parent = this.bookBtn;
             this.bookBtn.FillColor = System.Drawing.Color.White;
-            this.bookBtn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.bookBtn.HoverState.Parent = this.bookBtn;
             this.bookBtn.Location = new System.Drawing.Point(846, 624);
@@ -418,6 +420,7 @@ namespace E_Tour
             this.bookBtn.Size = new System.Drawing.Size(153, 45);
             this.bookBtn.TabIndex = 21;
             this.bookBtn.Text = "Book";
+            this.bookBtn.Click += new System.EventHandler(this.bookBtn_Click);
             // 
             // guna2Button1
             // 
@@ -428,7 +431,7 @@ namespace E_Tour
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Location = new System.Drawing.Point(618, 12);
@@ -437,11 +440,102 @@ namespace E_Tour
             this.guna2Button1.Size = new System.Drawing.Size(170, 45);
             this.guna2Button1.TabIndex = 22;
             this.guna2Button1.Text = "Booked Tickets";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
+            // 
+            // aboardcheck
+            // 
+            this.aboardcheck.AutoSize = true;
+            this.aboardcheck.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboardcheck.Location = new System.Drawing.Point(1004, 418);
+            this.aboardcheck.Name = "aboardcheck";
+            this.aboardcheck.Size = new System.Drawing.Size(40, 26);
+            this.aboardcheck.TabIndex = 23;
+            this.aboardcheck.Text = "No";
+            // 
+            // numberticket
+            // 
+            this.numberticket.AutoSize = true;
+            this.numberticket.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberticket.Location = new System.Drawing.Point(1066, 322);
+            this.numberticket.Name = "numberticket";
+            this.numberticket.Size = new System.Drawing.Size(88, 26);
+            this.numberticket.TabIndex = 24;
+            this.numberticket.Text = "Waiting";
+            // 
+            // ticketTb
+            // 
+            this.ticketTb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketTb.Location = new System.Drawing.Point(583, 119);
+            this.ticketTb.Multiline = true;
+            this.ticketTb.Name = "ticketTb";
+            this.ticketTb.Size = new System.Drawing.Size(169, 36);
+            this.ticketTb.TabIndex = 25;
+            this.ticketTb.TextChanged += new System.EventHandler(this.ticketTb_TextChanged);
+            // 
+            // IDLb
+            // 
+            this.IDLb.AutoSize = true;
+            this.IDLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDLb.Location = new System.Drawing.Point(1066, 82);
+            this.IDLb.Name = "IDLb";
+            this.IDLb.Size = new System.Drawing.Size(88, 26);
+            this.IDLb.TabIndex = 26;
+            this.IDLb.Text = "Waiting";
+            // 
+            // departureLb
+            // 
+            this.departureLb.AutoSize = true;
+            this.departureLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departureLb.Location = new System.Drawing.Point(1066, 129);
+            this.departureLb.Name = "departureLb";
+            this.departureLb.Size = new System.Drawing.Size(88, 26);
+            this.departureLb.TabIndex = 27;
+            this.departureLb.Text = "Waiting";
+            // 
+            // destinationLb
+            // 
+            this.destinationLb.AutoSize = true;
+            this.destinationLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destinationLb.Location = new System.Drawing.Point(1066, 182);
+            this.destinationLb.Name = "destinationLb";
+            this.destinationLb.Size = new System.Drawing.Size(88, 26);
+            this.destinationLb.TabIndex = 28;
+            this.destinationLb.Text = "Waiting";
+            // 
+            // startdateLb
+            // 
+            this.startdateLb.AutoSize = true;
+            this.startdateLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startdateLb.Location = new System.Drawing.Point(1066, 233);
+            this.startdateLb.Name = "startdateLb";
+            this.startdateLb.Size = new System.Drawing.Size(88, 26);
+            this.startdateLb.TabIndex = 29;
+            this.startdateLb.Text = "Waiting";
+            // 
+            // durationLb
+            // 
+            this.durationLb.AutoSize = true;
+            this.durationLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationLb.Location = new System.Drawing.Point(1066, 281);
+            this.durationLb.Name = "durationLb";
+            this.durationLb.Size = new System.Drawing.Size(88, 26);
+            this.durationLb.TabIndex = 30;
+            this.durationLb.Text = "Waiting";
+            // 
+            // priceTb
+            // 
+            this.priceTb.AutoSize = true;
+            this.priceTb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTb.Location = new System.Drawing.Point(1004, 581);
+            this.priceTb.Name = "priceTb";
+            this.priceTb.Size = new System.Drawing.Size(88, 26);
+            this.priceTb.TabIndex = 31;
+            this.priceTb.Text = "Waiting";
             // 
             // bookingForm
             // 
@@ -451,6 +545,15 @@ namespace E_Tour
             this.BackgroundImage = global::E_Tour.Properties.Resources.Artboard_1_2x;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.priceTb);
+            this.Controls.Add(this.durationLb);
+            this.Controls.Add(this.startdateLb);
+            this.Controls.Add(this.destinationLb);
+            this.Controls.Add(this.departureLb);
+            this.Controls.Add(this.IDLb);
+            this.Controls.Add(this.ticketTb);
+            this.Controls.Add(this.numberticket);
+            this.Controls.Add(this.aboardcheck);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.bookBtn);
             this.Controls.Add(this.payBtn);
@@ -469,7 +572,6 @@ namespace E_Tour
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.aboardCb);
-            this.Controls.Add(this.ticketsCb);
             this.Controls.Add(this.durationCb);
             this.Controls.Add(this.startDtp);
             this.Controls.Add(this.destinationCb);
@@ -477,6 +579,7 @@ namespace E_Tour
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "bookingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -490,7 +593,6 @@ namespace E_Tour
         private Guna.UI2.WinForms.Guna2ComboBox destinationCb;
         private Guna.UI2.WinForms.Guna2DateTimePicker startDtp;
         private Guna.UI2.WinForms.Guna2ComboBox durationCb;
-        private Guna.UI2.WinForms.Guna2ComboBox ticketsCb;
         private Guna.UI2.WinForms.Guna2CustomCheckBox aboardCb;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private System.Windows.Forms.Label label1;
@@ -510,5 +612,14 @@ namespace E_Tour
         private Guna.UI2.WinForms.Guna2Button bookBtn;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label aboardcheck;
+        private System.Windows.Forms.Label numberticket;
+        private System.Windows.Forms.TextBox ticketTb;
+        private System.Windows.Forms.Label destinationLb;
+        private System.Windows.Forms.Label departureLb;
+        private System.Windows.Forms.Label IDLb;
+        private System.Windows.Forms.Label durationLb;
+        private System.Windows.Forms.Label startdateLb;
+        private System.Windows.Forms.Label priceTb;
     }
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ce89da54ec844c58a403dd79e97e684c" Name="Diagram1">
+        <EntityTypeShape EntityType="E_TOURModel.CUSTOMER" Width="1.5" PointX="3.125" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TOURModel.DASHBOARD" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TOURModel.STAFF" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TOURModel.TICKET" Width="1.5" PointX="0.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TOURModel.TOUR" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="E_TOURModel.FK_DASHBOARD_CUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TOURModel.FK_DASHBOARD_TOUR" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TOURModel.FK_TICKET_TOUR" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

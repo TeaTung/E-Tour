@@ -43,17 +43,19 @@ namespace E_Tour
             this.usernameTb.BackColor = System.Drawing.Color.White;
             this.usernameTb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.usernameTb.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.usernameTb.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.usernameTb.HideSelection = false;
             this.usernameTb.LineColor = System.Drawing.Color.Gainsboro;
-            this.usernameTb.Location = new System.Drawing.Point(857, 247);
+            this.usernameTb.Location = new System.Drawing.Point(1143, 304);
+            this.usernameTb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.usernameTb.Name = "usernameTb";
             this.usernameTb.PasswordChar = '\0';
             this.usernameTb.SelectedText = "";
-            this.usernameTb.Size = new System.Drawing.Size(351, 47);
+            this.usernameTb.Size = new System.Drawing.Size(468, 58);
             this.usernameTb.TabIndex = 0;
             this.usernameTb.Text = "User Name";
+            this.usernameTb.Click += new System.EventHandler(this.usernameTb_Click);
             // 
             // passwordTb
             // 
@@ -64,32 +66,36 @@ namespace E_Tour
             this.passwordTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.passwordTb.HideSelection = false;
             this.passwordTb.LineColor = System.Drawing.Color.Gainsboro;
-            this.passwordTb.Location = new System.Drawing.Point(857, 342);
+            this.passwordTb.Location = new System.Drawing.Point(1143, 421);
+            this.passwordTb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordTb.Name = "passwordTb";
             this.passwordTb.PasswordChar = '●';
             this.passwordTb.SelectedText = "";
-            this.passwordTb.Size = new System.Drawing.Size(351, 47);
+            this.passwordTb.Size = new System.Drawing.Size(468, 58);
             this.passwordTb.TabIndex = 1;
             this.passwordTb.Text = "Password";
             this.passwordTb.UseSystemPasswordChar = true;
+            this.passwordTb.TextChanged += new System.EventHandler(this.passwordTb_TextChanged);
             // 
             // loginBtn
             // 
             this.loginBtn.Animated = true;
             this.loginBtn.AutoRoundedCorners = true;
-            this.loginBtn.BorderRadius = 21;
+            this.loginBtn.BorderRadius = 26;
             this.loginBtn.CheckedState.Parent = this.loginBtn;
             this.loginBtn.CustomImages.Parent = this.loginBtn;
             this.loginBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.loginBtn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.HoverState.Parent = this.loginBtn;
-            this.loginBtn.Location = new System.Drawing.Point(954, 458);
+            this.loginBtn.Location = new System.Drawing.Point(1272, 564);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.ShadowDecoration.Parent = this.loginBtn;
-            this.loginBtn.Size = new System.Drawing.Size(153, 45);
+            this.loginBtn.Size = new System.Drawing.Size(204, 55);
             this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "Login";
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // guna2Elipse1
             // 
@@ -99,11 +105,12 @@ namespace E_Tour
             // newLb
             // 
             this.newLb.AutoSize = true;
-            this.newLb.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(70)))), ((int)(((byte)(175)))));
-            this.newLb.Location = new System.Drawing.Point(967, 518);
+            this.newLb.Location = new System.Drawing.Point(1289, 638);
+            this.newLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.newLb.Name = "newLb";
-            this.newLb.Size = new System.Drawing.Size(128, 28);
+            this.newLb.Size = new System.Drawing.Size(138, 25);
             this.newLb.TabIndex = 3;
             this.newLb.Text = "Create Acount";
             this.newLb.Click += new System.EventHandler(this.newLb_Click);
@@ -111,23 +118,24 @@ namespace E_Tour
             // forgotLb
             // 
             this.forgotLb.AutoSize = true;
-            this.forgotLb.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(70)))), ((int)(((byte)(175)))));
-            this.forgotLb.Location = new System.Drawing.Point(960, 644);
+            this.forgotLb.Location = new System.Drawing.Point(1280, 793);
+            this.forgotLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.forgotLb.Name = "forgotLb";
-            this.forgotLb.Size = new System.Drawing.Size(151, 28);
+            this.forgotLb.Size = new System.Drawing.Size(170, 25);
             this.forgotLb.TabIndex = 4;
             this.forgotLb.Text = "Forgot Password?";
             this.forgotLb.Click += new System.EventHandler(this.forgotLb_Click);
             // 
             // loginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::E_Tour.Properties.Resources.loginBackground_2x;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.forgotLb);
             this.Controls.Add(this.newLb);
             this.Controls.Add(this.loginBtn);
@@ -135,7 +143,9 @@ namespace E_Tour
             this.Controls.Add(this.usernameTb);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login to E-Tour";
             this.Load += new System.EventHandler(this.loginForm_Load);
             this.ResumeLayout(false);

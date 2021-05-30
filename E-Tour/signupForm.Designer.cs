@@ -34,8 +34,8 @@ namespace E_Tour
             this.passwordTb = new Guna.UI.WinForms.GunaLineTextBox();
             this.usernameTb = new Guna.UI.WinForms.GunaLineTextBox();
             this.addressTb = new Guna.UI.WinForms.GunaLineTextBox();
-            this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
-            this.gunaLineTextBox2 = new Guna.UI.WinForms.GunaLineTextBox();
+            this.phoneTb = new Guna.UI.WinForms.GunaLineTextBox();
+            this.emailTb = new Guna.UI.WinForms.GunaLineTextBox();
             this.forgotLb = new Guna.UI.WinForms.GunaLabel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
@@ -48,7 +48,7 @@ namespace E_Tour
             this.loginBtn.CheckedState.Parent = this.loginBtn;
             this.loginBtn.CustomImages.Parent = this.loginBtn;
             this.loginBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.loginBtn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.HoverState.Parent = this.loginBtn;
             this.loginBtn.Location = new System.Drawing.Point(981, 646);
@@ -57,6 +57,7 @@ namespace E_Tour
             this.loginBtn.Size = new System.Drawing.Size(153, 45);
             this.loginBtn.TabIndex = 5;
             this.loginBtn.Text = "Sign Up";
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // passwordTb
             // 
@@ -81,7 +82,7 @@ namespace E_Tour
             this.usernameTb.BackColor = System.Drawing.Color.White;
             this.usernameTb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.usernameTb.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.usernameTb.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.usernameTb.HideSelection = false;
             this.usernameTb.LineColor = System.Drawing.Color.Gainsboro;
@@ -98,7 +99,7 @@ namespace E_Tour
             this.addressTb.BackColor = System.Drawing.Color.White;
             this.addressTb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.addressTb.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.addressTb.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addressTb.HideSelection = false;
             this.addressTb.LineColor = System.Drawing.Color.Gainsboro;
@@ -110,50 +111,51 @@ namespace E_Tour
             this.addressTb.TabIndex = 6;
             this.addressTb.Text = "Address";
             // 
-            // gunaLineTextBox1
+            // phoneTb
             // 
-            this.gunaLineTextBox1.BackColor = System.Drawing.Color.White;
-            this.gunaLineTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaLineTextBox1.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLineTextBox1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLineTextBox1.HideSelection = false;
-            this.gunaLineTextBox1.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLineTextBox1.Location = new System.Drawing.Point(876, 457);
-            this.gunaLineTextBox1.Name = "gunaLineTextBox1";
-            this.gunaLineTextBox1.PasswordChar = '\0';
-            this.gunaLineTextBox1.SelectedText = "";
-            this.gunaLineTextBox1.Size = new System.Drawing.Size(351, 47);
-            this.gunaLineTextBox1.TabIndex = 7;
-            this.gunaLineTextBox1.Text = "Phone Numer";
+            this.phoneTb.BackColor = System.Drawing.Color.White;
+            this.phoneTb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.phoneTb.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.phoneTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.phoneTb.HideSelection = false;
+            this.phoneTb.LineColor = System.Drawing.Color.Gainsboro;
+            this.phoneTb.Location = new System.Drawing.Point(876, 457);
+            this.phoneTb.Name = "phoneTb";
+            this.phoneTb.PasswordChar = '\0';
+            this.phoneTb.SelectedText = "";
+            this.phoneTb.Size = new System.Drawing.Size(351, 47);
+            this.phoneTb.TabIndex = 7;
+            this.phoneTb.Text = "Phone Numer";
             // 
-            // gunaLineTextBox2
+            // emailTb
             // 
-            this.gunaLineTextBox2.BackColor = System.Drawing.Color.White;
-            this.gunaLineTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaLineTextBox2.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLineTextBox2.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLineTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLineTextBox2.HideSelection = false;
-            this.gunaLineTextBox2.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLineTextBox2.Location = new System.Drawing.Point(876, 551);
-            this.gunaLineTextBox2.Name = "gunaLineTextBox2";
-            this.gunaLineTextBox2.PasswordChar = '\0';
-            this.gunaLineTextBox2.SelectedText = "";
-            this.gunaLineTextBox2.Size = new System.Drawing.Size(351, 47);
-            this.gunaLineTextBox2.TabIndex = 8;
-            this.gunaLineTextBox2.Text = "Email";
+            this.emailTb.BackColor = System.Drawing.Color.White;
+            this.emailTb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailTb.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.emailTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.emailTb.HideSelection = false;
+            this.emailTb.LineColor = System.Drawing.Color.Gainsboro;
+            this.emailTb.Location = new System.Drawing.Point(876, 551);
+            this.emailTb.Name = "emailTb";
+            this.emailTb.PasswordChar = '\0';
+            this.emailTb.SelectedText = "";
+            this.emailTb.Size = new System.Drawing.Size(351, 47);
+            this.emailTb.TabIndex = 8;
+            this.emailTb.Text = "Email";
             // 
             // forgotLb
             // 
             this.forgotLb.AutoSize = true;
-            this.forgotLb.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(70)))), ((int)(((byte)(175)))));
             this.forgotLb.Location = new System.Drawing.Point(871, 615);
             this.forgotLb.Name = "forgotLb";
-            this.forgotLb.Size = new System.Drawing.Size(198, 28);
+            this.forgotLb.Size = new System.Drawing.Size(175, 20);
             this.forgotLb.TabIndex = 9;
             this.forgotLb.Text = "Already Have Account?";
+            this.forgotLb.Click += new System.EventHandler(this.forgotLb_Click);
             // 
             // guna2Elipse1
             // 
@@ -169,8 +171,8 @@ namespace E_Tour
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.forgotLb);
-            this.Controls.Add(this.gunaLineTextBox2);
-            this.Controls.Add(this.gunaLineTextBox1);
+            this.Controls.Add(this.emailTb);
+            this.Controls.Add(this.phoneTb);
             this.Controls.Add(this.addressTb);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordTb);
@@ -191,8 +193,8 @@ namespace E_Tour
         private Guna.UI.WinForms.GunaLineTextBox passwordTb;
         private Guna.UI.WinForms.GunaLineTextBox usernameTb;
         private Guna.UI.WinForms.GunaLineTextBox addressTb;
-        private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox1;
-        private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox2;
+        private Guna.UI.WinForms.GunaLineTextBox phoneTb;
+        private Guna.UI.WinForms.GunaLineTextBox emailTb;
         private Guna.UI.WinForms.GunaLabel forgotLb;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
