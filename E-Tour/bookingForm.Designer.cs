@@ -30,9 +30,9 @@ namespace E_Tour
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.departureCb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.destinationCb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.startDtp = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -67,6 +67,7 @@ namespace E_Tour
             this.priceTb = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.PassportExpiration = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.detailTxb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,30 +175,30 @@ namespace E_Tour
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(46, 375);
@@ -463,7 +464,7 @@ namespace E_Tour
             // 
             this.numberticket.AutoSize = true;
             this.numberticket.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberticket.Location = new System.Drawing.Point(1066, 322);
+            this.numberticket.Location = new System.Drawing.Point(1038, 322);
             this.numberticket.Name = "numberticket";
             this.numberticket.Size = new System.Drawing.Size(88, 26);
             this.numberticket.TabIndex = 24;
@@ -483,7 +484,7 @@ namespace E_Tour
             // 
             this.IDLb.AutoSize = true;
             this.IDLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDLb.Location = new System.Drawing.Point(1066, 82);
+            this.IDLb.Location = new System.Drawing.Point(1038, 82);
             this.IDLb.Name = "IDLb";
             this.IDLb.Size = new System.Drawing.Size(88, 26);
             this.IDLb.TabIndex = 26;
@@ -493,7 +494,7 @@ namespace E_Tour
             // 
             this.departureLb.AutoSize = true;
             this.departureLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departureLb.Location = new System.Drawing.Point(1066, 129);
+            this.departureLb.Location = new System.Drawing.Point(1038, 129);
             this.departureLb.Name = "departureLb";
             this.departureLb.Size = new System.Drawing.Size(88, 26);
             this.departureLb.TabIndex = 27;
@@ -503,7 +504,7 @@ namespace E_Tour
             // 
             this.destinationLb.AutoSize = true;
             this.destinationLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.destinationLb.Location = new System.Drawing.Point(1066, 182);
+            this.destinationLb.Location = new System.Drawing.Point(1038, 182);
             this.destinationLb.Name = "destinationLb";
             this.destinationLb.Size = new System.Drawing.Size(88, 26);
             this.destinationLb.TabIndex = 28;
@@ -513,7 +514,7 @@ namespace E_Tour
             // 
             this.startdateLb.AutoSize = true;
             this.startdateLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startdateLb.Location = new System.Drawing.Point(1066, 233);
+            this.startdateLb.Location = new System.Drawing.Point(1038, 233);
             this.startdateLb.Name = "startdateLb";
             this.startdateLb.Size = new System.Drawing.Size(88, 26);
             this.startdateLb.TabIndex = 29;
@@ -523,7 +524,7 @@ namespace E_Tour
             // 
             this.durationLb.AutoSize = true;
             this.durationLb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.durationLb.Location = new System.Drawing.Point(1066, 281);
+            this.durationLb.Location = new System.Drawing.Point(1038, 281);
             this.durationLb.Name = "durationLb";
             this.durationLb.Size = new System.Drawing.Size(88, 26);
             this.durationLb.TabIndex = 30;
@@ -567,6 +568,15 @@ namespace E_Tour
             this.PassportExpiration.TabIndex = 33;
             this.PassportExpiration.Value = new System.DateTime(2021, 5, 7, 8, 35, 4, 802);
             // 
+            // detailTxb
+            // 
+            this.detailTxb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailTxb.Location = new System.Drawing.Point(976, 363);
+            this.detailTxb.Multiline = true;
+            this.detailTxb.Name = "detailTxb";
+            this.detailTxb.Size = new System.Drawing.Size(248, 105);
+            this.detailTxb.TabIndex = 34;
+            // 
             // bookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,6 +585,7 @@ namespace E_Tour
             this.BackgroundImage = global::E_Tour.Properties.Resources.Artboard_1_2x;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.detailTxb);
             this.Controls.Add(this.PassportExpiration);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.priceTb);
@@ -655,5 +666,6 @@ namespace E_Tour
         private System.Windows.Forms.Label priceTb;
         private Guna.UI2.WinForms.Guna2DateTimePicker PassportExpiration;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox detailTxb;
     }
 }

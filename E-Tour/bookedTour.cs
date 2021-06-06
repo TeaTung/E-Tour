@@ -21,6 +21,7 @@ namespace E_Tour
         }
         void Loaddata()
         {
+            
             var result = from c in db.DASHBOARDs
                          where c.IDCustomer == UserID.ID
                          select c;

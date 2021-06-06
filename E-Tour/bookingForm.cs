@@ -24,16 +24,24 @@ namespace E_Tour
         {
             //datagridview
             var result = from c in db.TOURs
-                         select c;
+                         select new {ID = c.ID, StartPoint = c.StartPoint, Destination = c.Destination, TourType = c.TourType, StartDay = c.StartDay, TimeConsumed = c.TimeConsumed};
             guna2DataGridView1.DataSource = result.ToList();
-            //aboard
-            if(aboardCb.Checked == false)
-            {
-                passportTb.BackColor = Color.Brown;
-                passportTb.ReadOnly = true;
-                visaDtp.BackColor = Color.Brown;
-                this.visaDtp.Enabled = false;
-            }
+            //Header name
+            guna2DataGridView1.Columns[0].HeaderText = "ID";
+            guna2DataGridView1.Columns[1].HeaderText = "Start Point";
+            guna2DataGridView1.Columns[2].HeaderText = "Destination";
+            guna2DataGridView1.Columns[3].HeaderText = "Tour Type";
+            guna2DataGridView1.Columns[4].HeaderText = "Start Day";
+            guna2DataGridView1.Columns[5].HeaderText = "Time consumed";
+            //Width
+            guna2DataGridView1.Columns[0].Width = 60;
+            guna2DataGridView1.Columns[1].Width = 150;
+            guna2DataGridView1.Columns[2].Width = 150;
+            guna2DataGridView1.Columns[3].Width = 150;
+            guna2DataGridView1.Columns[4].Width = 200;
+            guna2DataGridView1.Columns[5].Width = 150;
+
+            
         }
         private void LoaddataFinding()
         {
@@ -46,6 +54,14 @@ namespace E_Tour
             //data duration
             var result3 = db.TOURs.Select(m => m.TimeConsumed).Distinct();
             durationCb.DataSource = result3.ToList();
+            //aboard
+            passportTb.BackColor = Color.Brown;
+            passportTb.ReadOnly = true;
+            PassportExpiration.BackColor = Color.Brown;
+            this.PassportExpiration.Enabled = false;
+            visaDtp.BackColor = Color.Brown;
+            this.visaDtp.Enabled = false;
+            detailTxb.ReadOnly = true;
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -60,6 +76,7 @@ namespace E_Tour
         private void bookBtn_Click(object sender, EventArgs e) //Book only
         {
             TOUR tour = db.TOURs.Find(id);
+            TimeSpan newdate = tour.StartDay.Value.Subtract(DateTime.Now);
             if (aboardCb.Checked == true)
             {
                 if (ticketTb.Text == "")
@@ -73,6 +90,20 @@ namespace E_Tour
                 else if (visaDtp.Value < tour.StartDay)
                 {
                     MessageBox.Show("Your Visa has expired when the tour start!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if(tour.TourType == "National")
+                {
+                    if(newdate.Days < 1)
+                    {
+                        MessageBox.Show("National tour must booked before 1 day / 24 hours!", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                }
+                else if(tour.TourType == "International")
+                {
+                    if(newdate.Days < 7)
+                    {
+                        MessageBox.Show("National tour must booked before 7 day(s) / 1 week!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -101,14 +132,7 @@ namespace E_Tour
             }
         }
 
-        private void departureCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var result = from c in db.TOURs
-                         where c.StartPoint == departureCb.Text
-                         select c;
-            guna2DataGridView1.DataSource = result.ToList();
-        }
-
+       
         private void aboardCb_CheckedChanged(object sender, EventArgs e) //Aboard or not
         {
             CUSTOMER customer = db.CUSTOMERs.Find(UserID.ID);
@@ -147,10 +171,12 @@ namespace E_Tour
                 DataGridViewRow data = guna2DataGridView1.Rows[e.RowIndex];
                 IDLb.Text = data.Cells[0].Value.ToString();
                 id = Convert.ToInt32(IDLb.Text);
+                TOUR tour = db.TOURs.Find(id);
+                detailTxb.Text = tour.TourDetail;
                 departureLb.Text = data.Cells[1].Value.ToString();
                 destinationLb.Text = data.Cells[2].Value.ToString();
-                durationLb.Text = data.Cells[4].Value.ToString();
-                startdateLb.Text = data.Cells[5].Value.ToString();
+                durationLb.Text = data.Cells[5].Value.ToString();
+                startdateLb.Text = data.Cells[4].Value.ToString();
                 TICKET ticket = db.TICKETs.Where(p => p.TourID == id ).SingleOrDefault();
                 //ticketTxb.Text = Convert.ToString(ticket.Number);
                 priceTb.Text = ticket.Price.ToString();
@@ -247,6 +273,15 @@ namespace E_Tour
                 }
             }
         }
+        private void departureCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                var result = from c in db.TOURs
+                             where c.StartPoint == departureCb.Text
+                             select c;
+                guna2DataGridView1.DataSource = result.ToList();
+        }
+
 
         private void destinationCb_SelectedIndexChanged(object sender, EventArgs e)
         {
