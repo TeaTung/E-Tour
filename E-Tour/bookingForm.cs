@@ -23,8 +23,17 @@ namespace E_Tour
         private void Loaddata()
         {
             //datagridview
-            var result = from c in db.TOURs select c;
+            var result = from c in db.TOURs
+                         select c;
             guna2DataGridView1.DataSource = result.ToList();
+            //aboard
+            if(aboardCb.Checked == false)
+            {
+                passportTb.BackColor = Color.Brown;
+                passportTb.ReadOnly = true;
+                visaDtp.BackColor = Color.Brown;
+                this.visaDtp.Enabled = false;
+            }
         }
         private void LoaddataFinding()
         {
@@ -50,15 +59,45 @@ namespace E_Tour
 
         private void bookBtn_Click(object sender, EventArgs e) //Book only
         {
-            if (ticketTb.Text == "")
+            TOUR tour = db.TOURs.Find(id);
+            if (aboardCb.Checked == true)
             {
-                MessageBox.Show("Please enter number of tickets will book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ticketTb.Text == "")
+                {
+                    MessageBox.Show("Please enter number of tickets will book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (PassportExpiration.Value < tour.StartDay)
+                {
+                    MessageBox.Show("Your Passport has expired when the tour start!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (visaDtp.Value < tour.StartDay)
+                {
+                    MessageBox.Show("Your Visa has expired when the tour start!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DASHBOARD booked = new DASHBOARD() { BookTime = DateTime.Now, IDCustomer = UserID.ID, IDTour = id, IsPaid = "False", NumberOfTicket = Convert.ToInt32(numberticket.Text) };
+                    CUSTOMER customer = db.CUSTOMERs.Find(UserID.ID);
+                    customer.CitizenID_Passport = Convert.ToInt32(passportTb.Text);
+                    customer.Expiration = PassportExpiration.Value;
+                    db.DASHBOARDs.Add(booked);
+                    db.SaveChanges();
+                    MessageBox.Show("Congratulaion! Move to BookedTour to modify the information.\nNOTE : You must pay as soon as possible\n       Or we will delete it when time's up! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                DASHBOARD booked = new DASHBOARD() { BookTime = DateTime.Now, IDCustomer = UserID.ID, IDTour = id, IsPaid = "False", NumberOfTicket = Convert.ToInt32(numberticket.Text) };
-                db.DASHBOARDs.Add(booked);
-                db.SaveChanges();
+                if (ticketTb.Text == "")
+                {
+                    MessageBox.Show("Please enter number of tickets will book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DASHBOARD booked = new DASHBOARD() { BookTime = DateTime.Now, IDCustomer = UserID.ID, IDTour = id, IsPaid = "False", NumberOfTicket = Convert.ToInt32(numberticket.Text) };
+                    db.DASHBOARDs.Add(booked);
+                    db.SaveChanges();
+                    MessageBox.Show("Congratulaion! Move to BookedTour to modify the information.\nNOTE : You must pay as soon as possible\n       Or we will delete it when time's up! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -80,6 +119,8 @@ namespace E_Tour
                 customer.Type = "Aboard";
                 passportTb.BackColor = Color.White;
                 passportTb.ReadOnly = false;
+                PassportExpiration.BackColor = Color.White;
+                this.PassportExpiration.Enabled = true;
                 visaDtp.BackColor = Color.White;
                 this.visaDtp.Enabled = true;
             }
@@ -90,6 +131,8 @@ namespace E_Tour
                 customer.Type = "Foreign";
                 passportTb.BackColor = Color.Brown;
                 passportTb.ReadOnly = true;
+                PassportExpiration.BackColor = Color.Brown;
+                this.PassportExpiration.Enabled = false;
                 visaDtp.BackColor = Color.Brown;
                 this.visaDtp.Enabled = false;
             }
@@ -127,15 +170,81 @@ namespace E_Tour
 
         private void payBtn_Click(object sender, EventArgs e) // Book & Pay
         {
-            if (ticketTb.Text == "")
+            TOUR tour = db.TOURs.Find(id);
+            if (aboardCb.Checked == true)
             {
-                MessageBox.Show("Please enter number of tickets will book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ticketTb.Text == "")
+                {
+                    MessageBox.Show("Please enter number of tickets will book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if(PassportExpiration.Value < tour.StartDay)
+                {
+                    MessageBox.Show("Your Passport has expired when the tour start!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (visaDtp.Value < tour.StartDay)
+                {
+                    MessageBox.Show("Your Visa has expired when the tour start!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DASHBOARD booked = new DASHBOARD() { BookTime = DateTime.Now, IDCustomer = UserID.ID, IDTour = id, IsPaid = "True", NumberOfTicket = Convert.ToInt32(numberticket.Text) };
+                    CUSTOMER customer = db.CUSTOMERs.Find(UserID.ID);
+                    customer.CitizenID_Passport = Convert.ToInt32(passportTb.Text);
+                    customer.Expiration = PassportExpiration.Value;
+                    
+                    TICKET ticket = db.TICKETs.Where(p=>p.TourID == id).SingleOrDefault();
+                    int i = Convert.ToInt32(ticket.Number - booked.NumberOfTicket);
+                    if(i>0)
+                    {
+                        ticket.Number = i;
+                        MessageBox.Show("Congratulaion! Move to BookedTour to modify the information.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        db.DASHBOARDs.Add(booked);
+                    }
+                    else if(i == 0)
+                    {
+                        ticket.Number = i;
+                        MessageBox.Show("You have booked the last ticket(s)! Move to BookedTour to modify the information.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        db.DASHBOARDs.Add(booked);
+                    }
+                    else if (i < 0)
+                    {
+                        MessageBox.Show("Not Enough ticket(s) for your order!");
+                    }
+                    db.SaveChanges();
+                    
+                }
             }
             else
             {
-                DASHBOARD booked = new DASHBOARD() { BookTime = DateTime.Now, IDCustomer = UserID.ID, IDTour = id, IsPaid = "True", NumberOfTicket = Convert.ToInt32(numberticket.Text) };
-                db.DASHBOARDs.Add(booked);
-                db.SaveChanges();
+                if (ticketTb.Text == "")
+                {
+                    MessageBox.Show("Please enter number of tickets will book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DASHBOARD booked = new DASHBOARD() { BookTime = DateTime.Now, IDCustomer = UserID.ID, IDTour = id, IsPaid = "True", NumberOfTicket = Convert.ToInt32(numberticket.Text) };
+                    TICKET ticket = db.TICKETs.Where(p => p.TourID == id).SingleOrDefault();
+                    int i = Convert.ToInt32(ticket.Number - booked.NumberOfTicket);
+                    if (i > 0)
+                    {
+                        ticket.Number = i;
+                        MessageBox.Show("Congratulaion! Move to BookedTour to modify the information.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        db.DASHBOARDs.Add(booked);
+                    }
+                    else if (i == 0)
+                    {
+                        ticket.Number = i;
+                        MessageBox.Show("You have booked the last ticket(s)! Move to BookedTour to modify the information.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        db.DASHBOARDs.Add(booked);
+                    }
+                    else if (i < 0)
+                    {
+                        MessageBox.Show("Not Enough ticket(s) for your order!");
+                    }
+                    
+                    db.SaveChanges();
+                    
+                }
             }
         }
 

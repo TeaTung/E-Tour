@@ -65,6 +65,8 @@ namespace E_Tour
             this.startdateLb = new System.Windows.Forms.Label();
             this.durationLb = new System.Windows.Forms.Label();
             this.priceTb = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.PassportExpiration = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -295,7 +297,7 @@ namespace E_Tour
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(841, 418);
+            this.label7.Location = new System.Drawing.Point(841, 471);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 26);
             this.label7.TabIndex = 13;
@@ -315,17 +317,17 @@ namespace E_Tour
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(841, 470);
+            this.label9.Location = new System.Drawing.Point(419, 210);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(159, 26);
+            this.label9.Size = new System.Drawing.Size(165, 26);
             this.label9.TabIndex = 15;
-            this.label9.Text = "Passport code:";
+            this.label9.Text = "Passport code :";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(841, 525);
+            this.label10.Location = new System.Drawing.Point(840, 527);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 26);
             this.label10.TabIndex = 16;
@@ -344,14 +346,14 @@ namespace E_Tour
             this.passportTb.FocusedState.Parent = this.passportTb;
             this.passportTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passportTb.HoverState.Parent = this.passportTb;
-            this.passportTb.Location = new System.Drawing.Point(1009, 463);
+            this.passportTb.Location = new System.Drawing.Point(585, 200);
             this.passportTb.Margin = new System.Windows.Forms.Padding(4);
             this.passportTb.Name = "passportTb";
             this.passportTb.PasswordChar = '\0';
             this.passportTb.PlaceholderText = "";
             this.passportTb.SelectedText = "";
             this.passportTb.ShadowDecoration.Parent = this.passportTb;
-            this.passportTb.Size = new System.Drawing.Size(215, 36);
+            this.passportTb.Size = new System.Drawing.Size(196, 36);
             this.passportTb.TabIndex = 17;
             // 
             // visaDtp
@@ -363,7 +365,7 @@ namespace E_Tour
             this.visaDtp.FillColor = System.Drawing.Color.White;
             this.visaDtp.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.visaDtp.HoverState.Parent = this.visaDtp;
-            this.visaDtp.Location = new System.Drawing.Point(1009, 515);
+            this.visaDtp.Location = new System.Drawing.Point(1009, 517);
             this.visaDtp.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.visaDtp.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.visaDtp.Name = "visaDtp";
@@ -376,7 +378,7 @@ namespace E_Tour
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(841, 581);
+            this.label11.Location = new System.Drawing.Point(840, 582);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(145, 26);
             this.label11.TabIndex = 19;
@@ -451,7 +453,7 @@ namespace E_Tour
             // 
             this.aboardcheck.AutoSize = true;
             this.aboardcheck.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboardcheck.Location = new System.Drawing.Point(1004, 418);
+            this.aboardcheck.Location = new System.Drawing.Point(971, 471);
             this.aboardcheck.Name = "aboardcheck";
             this.aboardcheck.Size = new System.Drawing.Size(40, 26);
             this.aboardcheck.TabIndex = 23;
@@ -531,11 +533,39 @@ namespace E_Tour
             // 
             this.priceTb.AutoSize = true;
             this.priceTb.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTb.Location = new System.Drawing.Point(1004, 581);
+            this.priceTb.Location = new System.Drawing.Point(1004, 582);
             this.priceTb.Name = "priceTb";
             this.priceTb.Size = new System.Drawing.Size(88, 26);
             this.priceTb.TabIndex = 31;
             this.priceTb.Text = "Waiting";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Yu Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(460, 253);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(124, 26);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Expiration :";
+            // 
+            // PassportExpiration
+            // 
+            this.PassportExpiration.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
+            this.PassportExpiration.BorderRadius = 1;
+            this.PassportExpiration.BorderThickness = 1;
+            this.PassportExpiration.CheckedState.Parent = this.PassportExpiration;
+            this.PassportExpiration.FillColor = System.Drawing.Color.White;
+            this.PassportExpiration.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.PassportExpiration.HoverState.Parent = this.PassportExpiration;
+            this.PassportExpiration.Location = new System.Drawing.Point(583, 243);
+            this.PassportExpiration.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.PassportExpiration.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.PassportExpiration.Name = "PassportExpiration";
+            this.PassportExpiration.ShadowDecoration.Parent = this.PassportExpiration;
+            this.PassportExpiration.Size = new System.Drawing.Size(196, 36);
+            this.PassportExpiration.TabIndex = 33;
+            this.PassportExpiration.Value = new System.DateTime(2021, 5, 7, 8, 35, 4, 802);
             // 
             // bookingForm
             // 
@@ -545,6 +575,8 @@ namespace E_Tour
             this.BackgroundImage = global::E_Tour.Properties.Resources.Artboard_1_2x;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.PassportExpiration);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.priceTb);
             this.Controls.Add(this.durationLb);
             this.Controls.Add(this.startdateLb);
@@ -621,5 +653,7 @@ namespace E_Tour
         private System.Windows.Forms.Label durationLb;
         private System.Windows.Forms.Label startdateLb;
         private System.Windows.Forms.Label priceTb;
+        private Guna.UI2.WinForms.Guna2DateTimePicker PassportExpiration;
+        private System.Windows.Forms.Label label12;
     }
 }

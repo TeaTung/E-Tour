@@ -29,12 +29,15 @@ namespace E_Tour
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.passportTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.departureTxb = new Guna.UI2.WinForms.Guna2TextBox();
             this.destinationTxb = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,8 +52,17 @@ namespace E_Tour
             this.tourShowData = new Guna.UI2.WinForms.Guna2DataGridView();
             this.bookedticketData = new Guna.UI2.WinForms.Guna2DataGridView();
             this.updateticketBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.bookeddataNotPaid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.textfindPaid = new Guna.UI2.WinForms.Guna2TextBox();
+            this.findPaid = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tourdetailTxb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tourtypeCb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ticketsaleCb = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tourShowData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookedticketData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookeddataNotPaid)).BeginInit();
             this.SuspendLayout();
             // 
             // passportTb
@@ -191,7 +203,7 @@ namespace E_Tour
             this.datetime.BorderRadius = 1;
             this.datetime.BorderThickness = 1;
             this.datetime.CheckedState.Parent = this.datetime;
-            this.datetime.CustomFormat = "dd-MM-yyyy";
+            this.datetime.CustomFormat = "dd/MM/YYYY";
             this.datetime.FillColor = System.Drawing.Color.White;
             this.datetime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -203,7 +215,7 @@ namespace E_Tour
             this.datetime.ShadowDecoration.Parent = this.datetime;
             this.datetime.Size = new System.Drawing.Size(181, 36);
             this.datetime.TabIndex = 24;
-            this.datetime.Value = new System.DateTime(2021, 5, 7, 8, 35, 4, 802);
+            this.datetime.Value = new System.DateTime(2021, 6, 5, 8, 35, 0, 0);
             // 
             // findBtn
             // 
@@ -283,30 +295,30 @@ namespace E_Tour
             // 
             // tourShowData
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tourShowData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.tourShowData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.tourShowData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tourShowData.BackgroundColor = System.Drawing.Color.White;
             this.tourShowData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tourShowData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tourShowData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tourShowData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tourShowData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.tourShowData.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tourShowData.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tourShowData.DefaultCellStyle = dataGridViewCellStyle21;
             this.tourShowData.EnableHeadersVisualStyles = false;
             this.tourShowData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tourShowData.Location = new System.Drawing.Point(51, 404);
@@ -341,37 +353,37 @@ namespace E_Tour
             // 
             // bookedticketData
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.bookedticketData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.bookedticketData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.bookedticketData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bookedticketData.BackgroundColor = System.Drawing.Color.White;
             this.bookedticketData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bookedticketData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.bookedticketData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bookedticketData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bookedticketData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.bookedticketData.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bookedticketData.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bookedticketData.DefaultCellStyle = dataGridViewCellStyle24;
             this.bookedticketData.EnableHeadersVisualStyles = false;
             this.bookedticketData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.bookedticketData.Location = new System.Drawing.Point(844, 93);
+            this.bookedticketData.Location = new System.Drawing.Point(844, 388);
             this.bookedticketData.Name = "bookedticketData";
             this.bookedticketData.RowHeadersVisible = false;
             this.bookedticketData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bookedticketData.Size = new System.Drawing.Size(415, 544);
+            this.bookedticketData.Size = new System.Drawing.Size(415, 233);
             this.bookedticketData.TabIndex = 30;
             this.bookedticketData.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.bookedticketData.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -415,6 +427,178 @@ namespace E_Tour
             this.updateticketBtn.Text = "Update";
             this.updateticketBtn.Click += new System.EventHandler(this.updateticketBtn_Click);
             // 
+            // bookeddataNotPaid
+            // 
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            this.bookeddataNotPaid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.bookeddataNotPaid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bookeddataNotPaid.BackgroundColor = System.Drawing.Color.White;
+            this.bookeddataNotPaid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bookeddataNotPaid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bookeddataNotPaid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bookeddataNotPaid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.bookeddataNotPaid.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bookeddataNotPaid.DefaultCellStyle = dataGridViewCellStyle27;
+            this.bookeddataNotPaid.EnableHeadersVisualStyles = false;
+            this.bookeddataNotPaid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.bookeddataNotPaid.Location = new System.Drawing.Point(844, 139);
+            this.bookeddataNotPaid.Name = "bookeddataNotPaid";
+            this.bookeddataNotPaid.RowHeadersVisible = false;
+            this.bookeddataNotPaid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bookeddataNotPaid.Size = new System.Drawing.Size(415, 233);
+            this.bookeddataNotPaid.TabIndex = 32;
+            this.bookeddataNotPaid.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.bookeddataNotPaid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.bookeddataNotPaid.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.bookeddataNotPaid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.bookeddataNotPaid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.bookeddataNotPaid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.bookeddataNotPaid.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.bookeddataNotPaid.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.bookeddataNotPaid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.bookeddataNotPaid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bookeddataNotPaid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.bookeddataNotPaid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.bookeddataNotPaid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.bookeddataNotPaid.ThemeStyle.HeaderStyle.Height = 4;
+            this.bookeddataNotPaid.ThemeStyle.ReadOnly = false;
+            this.bookeddataNotPaid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.bookeddataNotPaid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bookeddataNotPaid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.bookeddataNotPaid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.bookeddataNotPaid.ThemeStyle.RowsStyle.Height = 22;
+            this.bookeddataNotPaid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.bookeddataNotPaid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // textfindPaid
+            // 
+            this.textfindPaid.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textfindPaid.DefaultText = "";
+            this.textfindPaid.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textfindPaid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textfindPaid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textfindPaid.DisabledState.Parent = this.textfindPaid;
+            this.textfindPaid.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textfindPaid.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textfindPaid.FocusedState.Parent = this.textfindPaid;
+            this.textfindPaid.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textfindPaid.HoverState.Parent = this.textfindPaid;
+            this.textfindPaid.Location = new System.Drawing.Point(1000, 97);
+            this.textfindPaid.Name = "textfindPaid";
+            this.textfindPaid.PasswordChar = '\0';
+            this.textfindPaid.PlaceholderText = "";
+            this.textfindPaid.SelectedText = "";
+            this.textfindPaid.ShadowDecoration.Parent = this.textfindPaid;
+            this.textfindPaid.Size = new System.Drawing.Size(180, 36);
+            this.textfindPaid.TabIndex = 33;
+            // 
+            // findPaid
+            // 
+            this.findPaid.Animated = true;
+            this.findPaid.AutoRoundedCorners = true;
+            this.findPaid.BorderRadius = 17;
+            this.findPaid.CheckedState.Parent = this.findPaid;
+            this.findPaid.CustomImages.Parent = this.findPaid;
+            this.findPaid.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.findPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.findPaid.ForeColor = System.Drawing.Color.White;
+            this.findPaid.HoverState.Parent = this.findPaid;
+            this.findPaid.Location = new System.Drawing.Point(1186, 97);
+            this.findPaid.Name = "findPaid";
+            this.findPaid.ShadowDecoration.Parent = this.findPaid;
+            this.findPaid.Size = new System.Drawing.Size(73, 36);
+            this.findPaid.TabIndex = 34;
+            this.findPaid.Text = "Find";
+            this.findPaid.Click += new System.EventHandler(this.findPaid_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(187, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Tour Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(486, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 25);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Tour Detail";
+            // 
+            // tourdetailTxb
+            // 
+            this.tourdetailTxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tourdetailTxb.DefaultText = "";
+            this.tourdetailTxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tourdetailTxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tourdetailTxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tourdetailTxb.DisabledState.Parent = this.tourdetailTxb;
+            this.tourdetailTxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tourdetailTxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tourdetailTxb.FocusedState.Parent = this.tourdetailTxb;
+            this.tourdetailTxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tourdetailTxb.HoverState.Parent = this.tourdetailTxb;
+            this.tourdetailTxb.Location = new System.Drawing.Point(598, 74);
+            this.tourdetailTxb.Name = "tourdetailTxb";
+            this.tourdetailTxb.PasswordChar = '\0';
+            this.tourdetailTxb.PlaceholderText = "";
+            this.tourdetailTxb.SelectedText = "";
+            this.tourdetailTxb.ShadowDecoration.Parent = this.tourdetailTxb;
+            this.tourdetailTxb.Size = new System.Drawing.Size(181, 36);
+            this.tourdetailTxb.TabIndex = 37;
+            // 
+            // tourtypeCb
+            // 
+            this.tourtypeCb.BackColor = System.Drawing.Color.Transparent;
+            this.tourtypeCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.tourtypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tourtypeCb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tourtypeCb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tourtypeCb.FocusedState.Parent = this.tourtypeCb;
+            this.tourtypeCb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tourtypeCb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.tourtypeCb.HoverState.Parent = this.tourtypeCb;
+            this.tourtypeCb.ItemHeight = 30;
+            this.tourtypeCb.Items.AddRange(new object[] {
+            "National",
+            "International"});
+            this.tourtypeCb.ItemsAppearance.Parent = this.tourtypeCb;
+            this.tourtypeCb.Location = new System.Drawing.Point(284, 74);
+            this.tourtypeCb.Name = "tourtypeCb";
+            this.tourtypeCb.ShadowDecoration.Parent = this.tourtypeCb;
+            this.tourtypeCb.Size = new System.Drawing.Size(196, 36);
+            this.tourtypeCb.TabIndex = 39;
+            // 
+            // ticketsaleCb
+            // 
+            this.ticketsaleCb.AutoSize = true;
+            this.ticketsaleCb.Location = new System.Drawing.Point(415, 262);
+            this.ticketsaleCb.Name = "ticketsaleCb";
+            this.ticketsaleCb.Size = new System.Drawing.Size(80, 17);
+            this.ticketsaleCb.TabIndex = 40;
+            this.ticketsaleCb.Text = "Ticket Sale";
+            this.ticketsaleCb.UseVisualStyleBackColor = true;
+            // 
             // tourEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +607,14 @@ namespace E_Tour
             this.BackgroundImage = global::E_Tour.Properties.Resources.Artboard_2_2x;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.ticketsaleCb);
+            this.Controls.Add(this.tourtypeCb);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tourdetailTxb);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.findPaid);
+            this.Controls.Add(this.textfindPaid);
+            this.Controls.Add(this.bookeddataNotPaid);
             this.Controls.Add(this.updateticketBtn);
             this.Controls.Add(this.bookedticketData);
             this.Controls.Add(this.tourShowData);
@@ -443,7 +635,9 @@ namespace E_Tour
             this.Text = "tourEditor";
             ((System.ComponentModel.ISupportInitialize)(this.tourShowData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookedticketData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookeddataNotPaid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -463,5 +657,13 @@ namespace E_Tour
         private Guna.UI2.WinForms.Guna2DataGridView tourShowData;
         private Guna.UI2.WinForms.Guna2DataGridView bookedticketData;
         private Guna.UI2.WinForms.Guna2Button updateticketBtn;
+        private Guna.UI2.WinForms.Guna2DataGridView bookeddataNotPaid;
+        private Guna.UI2.WinForms.Guna2TextBox textfindPaid;
+        private Guna.UI2.WinForms.Guna2Button findPaid;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox tourdetailTxb;
+        private Guna.UI2.WinForms.Guna2ComboBox tourtypeCb;
+        private System.Windows.Forms.CheckBox ticketsaleCb;
     }
 }

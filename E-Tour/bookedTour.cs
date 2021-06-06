@@ -32,7 +32,7 @@ namespace E_Tour
             {
                 aboardLb.Text = "Yes";
                 CMND.Text = "Passport";
-
+                CMNDTxb.Text = customer.CitizenID_Passport.ToString();
             }
             else
             {
@@ -78,7 +78,46 @@ namespace E_Tour
                 TICKET ticket = db.TICKETs.Where(p=>p.TourID == idtour).SingleOrDefault();
                 PriceLb.Text = ticket.Price.ToString();
                 totalLb.Text = ((Convert.ToInt32(PriceLb.Text))*(Convert.ToInt32(ticketnumberLb.Text))).ToString();
+                
+                //late return
+                TimeSpan newdate = tour.StartDay.Value.Subtract(DateTime.Now);
+                if(tour.TourType == "National")
+                {
+                    if(newdate.Hours > 4)
+                    {
+                        latereturnLb.Text = "0";
+                    }
+                    else if(newdate.Hours < 4)
+                    {
+                        latereturnLb.Text = "100000";
+                    }
+                }
+                else if(tour.TourType == "International")
+                {
+                    if(newdate.Days > 3)
+                    {
+                        latereturnLb.Text = "0";
+                    }
+                    else if(newdate.Days <= 3)
+                    {
+                        latereturnLb.Text = "1150000"; //50USD
+                    }
+                }
+                //return money
+                if (ticket.Sale == true)
+                {
+                    returnmoneyLb.Text = Convert.ToInt32((Convert.ToInt32(totalLb.Text) * 80 / 100)-(Convert.ToInt32(latereturnLb.Text))).ToString();
+                }
+                else if (ticket.Sale == false)
+                {
+                    returnmoneyLb.Text = Convert.ToInt32(Convert.ToInt32(totalLb.Text) - (Convert.ToInt32(latereturnLb.Text))).ToString();
+                }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -86,6 +125,9 @@ namespace E_Tour
             DASHBOARD bookedticket = db.DASHBOARDs.Find(booked);
             if (bookedticket != null)
             {
+                //TICKET ticket = db.TICKETs.Where(p=>p.TourID == bookedticket.IDTour).SingleOrDefault();
+                //int i = Convert.ToInt32(ticket.Number + bookedticket.NumberOfTicket);
+                //ticket.Number = i;
                 db.DASHBOARDs.Remove(bookedticket);
                 db.SaveChanges();
             }
