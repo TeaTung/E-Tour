@@ -93,10 +93,7 @@ namespace E_Tour
             }
 
         }
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
