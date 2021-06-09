@@ -13,10 +13,10 @@ namespace E_Tour
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class E_TOUREntities : DbContext
+    public partial class ETOUREntities : DbContext
     {
-        public E_TOUREntities()
-            : base("name=E_TOUREntities")
+        public ETOUREntities()
+            : base("name=ETOUREntities")
         {
         }
     
@@ -28,6 +28,7 @@ namespace E_Tour
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public virtual DbSet<DASHBOARD> DASHBOARDs { get; set; }
         public virtual DbSet<STAFF> STAFFs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TICKET> TICKETs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }
     }

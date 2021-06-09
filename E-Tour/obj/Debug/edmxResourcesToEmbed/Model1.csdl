@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="E_TOURModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="ETOURModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="CUSTOMER">
     <Key>
       <PropertyRef Name="ID" />
@@ -14,6 +14,7 @@
     <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Name="Account" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DASHBOARDs" Relationship="Self.FK_DASHBOARD_CUSTOMER" FromRole="CUSTOMER" ToRole="DASHBOARD" />
   </EntityType>
   <EntityType Name="DASHBOARD">
@@ -25,7 +26,6 @@
     <Property Name="IDCustomer" Type="Int32" />
     <Property Name="IDTour" Type="Int32" />
     <Property Name="IsPaid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ReturnedMoney" Type="Decimal" Precision="19" Scale="4" Nullable="true" />
     <Property Name="NumberOfTicket" Type="Int32" />
     <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_DASHBOARD_CUSTOMER" FromRole="DASHBOARD" ToRole="CUSTOMER" />
     <NavigationProperty Name="TOUR" Relationship="Self.FK_DASHBOARD_TOUR" FromRole="DASHBOARD" ToRole="TOUR" />
@@ -40,6 +40,16 @@
     <Property Name="PhoneNumber" Type="Int32" />
     <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="TICKET">
     <Key>
       <PropertyRef Name="ID" />
@@ -48,7 +58,7 @@
     <Property Name="TourID" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Int32" />
     <Property Name="Number" Type="Int32" />
-    <Property Name="Sale" Type="Boolean" />
+    <Property Name="Sale" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="TOUR" Relationship="Self.FK_TICKET_TOUR" FromRole="TICKET" ToRole="TOUR" />
   </EntityType>
   <EntityType Name="TOUR">
@@ -59,7 +69,7 @@
     <Property Name="StartPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TourType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="TimeConsumed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TimeConsumed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="StartDay" Type="DateTime" Precision="0" />
     <Property Name="TourDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DASHBOARDs" Relationship="Self.FK_DASHBOARD_TOUR" FromRole="TOUR" ToRole="DASHBOARD" />
@@ -101,10 +111,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="E_TOUREntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ETOUREntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
     <EntitySet Name="DASHBOARDs" EntityType="Self.DASHBOARD" />
     <EntitySet Name="STAFFs" EntityType="Self.STAFF" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TICKETs" EntityType="Self.TICKET" />
     <EntitySet Name="TOURs" EntityType="Self.TOUR" />
     <AssociationSet Name="FK_DASHBOARD_CUSTOMER" Association="Self.FK_DASHBOARD_CUSTOMER">

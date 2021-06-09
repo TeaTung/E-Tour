@@ -63,6 +63,16 @@ namespace E_Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1828778 {
+            get {
+                object obj = ResourceManager.GetObject("1828778", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Artboard_1_2x {
             get {
                 object obj = ResourceManager.GetObject("Artboard 1@2x", resourceCulture);
@@ -106,6 +116,16 @@ namespace E_Tour.Properties {
         internal static System.Drawing.Bitmap signupBackground_2x {
             get {
                 object obj = ResourceManager.GetObject("signupBackground@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

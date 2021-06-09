@@ -18,7 +18,7 @@ namespace E_Tour
         public int TourID { get; set; }
         public Nullable<int> Price { get; set; }
         public Nullable<int> Number { get; set; }
-        public Nullable<bool> Sale { get; set; }
+        public string Sale { get; set; }
     
         public virtual TOUR TOUR { get; set; }
     }

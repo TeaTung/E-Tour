@@ -9,6 +9,5 @@ namespace E_Tour
     class UserID
     {   
             public static int ID;
-        public static bool aboard;
     }
 }

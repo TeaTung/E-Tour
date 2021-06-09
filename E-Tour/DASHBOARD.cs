@@ -19,7 +19,6 @@ namespace E_Tour
         public Nullable<int> IDCustomer { get; set; }
         public Nullable<int> IDTour { get; set; }
         public string IsPaid { get; set; }
-        public Nullable<decimal> ReturnedMoney { get; set; }
         public Nullable<int> NumberOfTicket { get; set; }
     
         public virtual CUSTOMER CUSTOMER { get; set; }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="E_TOURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="ETOURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CUSTOMER">
     <Key>
       <PropertyRef Name="ID" />
@@ -14,6 +14,7 @@
     <Property Name="Gender" Type="char" MaxLength="10" />
     <Property Name="Account" Type="nchar" MaxLength="20" />
     <Property Name="Password" Type="nchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="DASHBOARD">
     <Key>
@@ -24,7 +25,6 @@
     <Property Name="IDCustomer" Type="int" />
     <Property Name="IDTour" Type="int" />
     <Property Name="IsPaid" Type="nvarchar" MaxLength="50" />
-    <Property Name="ReturnedMoney" Type="money" />
     <Property Name="NumberOfTicket" Type="int" />
   </EntityType>
   <EntityType Name="STAFF">
@@ -37,15 +37,25 @@
     <Property Name="PhoneNumber" Type="int" />
     <Property Name="Gender" Type="nchar" MaxLength="10" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="TICKET">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TourID" Type="int" Nullable="false" />
-    <Property Name="Price" Type="money" />
+    <Property Name="Price" Type="int" />
     <Property Name="Number" Type="int" />
-    <Property Name="Sale" Type="bit" />
+    <Property Name="Sale" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="TOUR">
     <Key>
@@ -55,7 +65,7 @@
     <Property Name="StartPoint" Type="nvarchar" MaxLength="50" />
     <Property Name="Destination" Type="nvarchar" MaxLength="50" />
     <Property Name="TourType" Type="nvarchar" MaxLength="50" />
-    <Property Name="TimeConsumed" Type="nvarchar" MaxLength="20" />
+    <Property Name="TimeConsumed" Type="nvarchar" MaxLength="50" />
     <Property Name="StartDay" Type="smalldatetime" />
     <Property Name="TourDetail" Type="nvarchar" MaxLength="50" />
   </EntityType>
@@ -95,10 +105,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="E_TOURModelStoreContainer">
+  <EntityContainer Name="ETOURModelStoreContainer">
     <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DASHBOARD" EntityType="Self.DASHBOARD" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="STAFF" EntityType="Self.STAFF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TICKET" EntityType="Self.TICKET" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DASHBOARD_CUSTOMER" Association="Self.FK_DASHBOARD_CUSTOMER">
