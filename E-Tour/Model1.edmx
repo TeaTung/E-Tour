@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ETOURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="CitizenID/Passport" Type="int" />
+          <Property Name="Expiration" Type="smalldatetime" />
+          <Property Name="Gender" Type="char" MaxLength="10" />
+          <Property Name="Account" Type="nchar" MaxLength="20" />
+          <Property Name="Password" Type="nchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DASHBOARD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookTime" Type="smalldatetime" />
+          <Property Name="IDCustomer" Type="int" />
+          <Property Name="IDTour" Type="int" />
+          <Property Name="IsPaid" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumberOfTicket" Type="int" />
+        </EntityType>
+        <EntityType Name="STAFF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="int" />
+          <Property Name="Gender" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TICKET">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TourID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Number" Type="int" />
+          <Property Name="Sale" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TOUR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartPoint" Type="nvarchar" MaxLength="50" />
+          <Property Name="Destination" Type="nvarchar" MaxLength="50" />
+          <Property Name="TourType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeConsumed" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDay" Type="smalldatetime" />
+          <Property Name="TourDetail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_DASHBOARD_CUSTOMER">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+          <End Role="DASHBOARD" Type="Self.DASHBOARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DASHBOARD">
+              <PropertyRef Name="IDCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DASHBOARD_TOUR">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="DASHBOARD" Type="Self.DASHBOARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DASHBOARD">
+              <PropertyRef Name="IDTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKET_TOUR">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+          <End Role="TICKET" Type="Self.TICKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TICKET">
+              <PropertyRef Name="TourID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ETOURModelStoreContainer">
+          <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DASHBOARD" EntityType="Self.DASHBOARD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STAFF" EntityType="Self.STAFF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TICKET" EntityType="Self.TICKET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DASHBOARD_CUSTOMER" Association="Self.FK_DASHBOARD_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+            <End Role="DASHBOARD" EntitySet="DASHBOARD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DASHBOARD_TOUR" Association="Self.FK_DASHBOARD_TOUR">
+            <End Role="TOUR" EntitySet="TOUR" />
+            <End Role="DASHBOARD" EntitySet="DASHBOARD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKET_TOUR" Association="Self.FK_TICKET_TOUR">
+            <End Role="TOUR" EntitySet="TOUR" />
+            <End Role="TICKET" EntitySet="TICKET" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ETOURModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CitizenID_Passport" Type="Int32" />
+          <Property Name="Expiration" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Account" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DASHBOARDs" Relationship="Self.FK_DASHBOARD_CUSTOMER" FromRole="CUSTOMER" ToRole="DASHBOARD" />
+        </EntityType>
+        <EntityType Name="DASHBOARD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookTime" Type="DateTime" Precision="0" />
+          <Property Name="IDCustomer" Type="Int32" />
+          <Property Name="IDTour" Type="Int32" />
+          <Property Name="IsPaid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumberOfTicket" Type="Int32" />
+          <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_DASHBOARD_CUSTOMER" FromRole="DASHBOARD" ToRole="CUSTOMER" />
+          <NavigationProperty Name="TOUR" Relationship="Self.FK_DASHBOARD_TOUR" FromRole="DASHBOARD" ToRole="TOUR" />
+        </EntityType>
+        <EntityType Name="STAFF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TICKET">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TourID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="Sale" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="TOUR" Relationship="Self.FK_TICKET_TOUR" FromRole="TICKET" ToRole="TOUR" />
+        </EntityType>
+        <EntityType Name="TOUR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TourType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeConsumed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDay" Type="DateTime" Precision="0" />
+          <Property Name="TourDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DASHBOARDs" Relationship="Self.FK_DASHBOARD_TOUR" FromRole="TOUR" ToRole="DASHBOARD" />
+          <NavigationProperty Name="TICKETs" Relationship="Self.FK_TICKET_TOUR" FromRole="TOUR" ToRole="TICKET" />
+        </EntityType>
+        <Association Name="FK_DASHBOARD_CUSTOMER">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+          <End Role="DASHBOARD" Type="Self.DASHBOARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DASHBOARD">
+              <PropertyRef Name="IDCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DASHBOARD_TOUR">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="0..1" />
+          <End Role="DASHBOARD" Type="Self.DASHBOARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DASHBOARD">
+              <PropertyRef Name="IDTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TICKET_TOUR">
+          <End Role="TOUR" Type="Self.TOUR" Multiplicity="1" />
+          <End Role="TICKET" Type="Self.TICKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOUR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TICKET">
+              <PropertyRef Name="TourID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ETOUREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+          <EntitySet Name="DASHBOARDs" EntityType="Self.DASHBOARD" />
+          <EntitySet Name="STAFFs" EntityType="Self.STAFF" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TICKETs" EntityType="Self.TICKET" />
+          <EntitySet Name="TOURs" EntityType="Self.TOUR" />
+          <AssociationSet Name="FK_DASHBOARD_CUSTOMER" Association="Self.FK_DASHBOARD_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="DASHBOARD" EntitySet="DASHBOARDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DASHBOARD_TOUR" Association="Self.FK_DASHBOARD_TOUR">
+            <End Role="TOUR" EntitySet="TOURs" />
+            <End Role="DASHBOARD" EntitySet="DASHBOARDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TICKET_TOUR" Association="Self.FK_TICKET_TOUR">
+            <End Role="TOUR" EntitySet="TOURs" />
+            <End Role="TICKET" EntitySet="TICKETs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ETOURModelStoreContainer" CdmEntityContainer="ETOUREntities">
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="ETOURModel.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CitizenID_Passport" ColumnName="CitizenID/Passport" />
+                <ScalarProperty Name="Expiration" ColumnName="Expiration" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DASHBOARDs">
+            <EntityTypeMapping TypeName="ETOURModel.DASHBOARD">
+              <MappingFragment StoreEntitySet="DASHBOARD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BookTime" ColumnName="BookTime" />
+                <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
+                <ScalarProperty Name="IDTour" ColumnName="IDTour" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="NumberOfTicket" ColumnName="NumberOfTicket" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAFFs">
+            <EntityTypeMapping TypeName="ETOURModel.STAFF">
+              <MappingFragment StoreEntitySet="STAFF">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ETOURModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TICKETs">
+            <EntityTypeMapping TypeName="ETOURModel.TICKET">
+              <MappingFragment StoreEntitySet="TICKET">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TourID" ColumnName="TourID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Sale" ColumnName="Sale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TOURs">
+            <EntityTypeMapping TypeName="ETOURModel.TOUR">
+              <MappingFragment StoreEntitySet="TOUR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StartPoint" ColumnName="StartPoint" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="TourType" ColumnName="TourType" />
+                <ScalarProperty Name="TimeConsumed" ColumnName="TimeConsumed" />
+                <ScalarProperty Name="StartDay" ColumnName="StartDay" />
+                <ScalarProperty Name="TourDetail" ColumnName="TourDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
