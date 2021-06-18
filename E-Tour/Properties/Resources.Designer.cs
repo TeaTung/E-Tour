@@ -93,6 +93,16 @@ namespace E_Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Artboard_2x {
+            get {
+                object obj = ResourceManager.GetObject("Artboard@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Artboard_3_2x {
             get {
                 object obj = ResourceManager.GetObject("Artboard 3@2x", resourceCulture);
