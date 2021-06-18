@@ -96,7 +96,26 @@ namespace E_Tour
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == 8);
         }
 
-        private void cbbType_SelectedIndexChanged(object sender, EventArgs e)
+        void loadData()
+        {
+            lblExpiration.Visible = false;
+            dtpExpiration.Visible = false;
+            lblExpiration.Text = "Citizen ID";
+
+            cbbGender.Text = "Please, select any value";
+        }
+
+        private void dtpExpiration_ValueChanged(object sender, EventArgs e)
+        {
+            double day = dtpExpiration.Value.Subtract(DateTime.Now).TotalDays;
+            if (day < 7)
+            {
+                MessageBox.Show("The date of Expiration must be higher than 7 days", "Failure !!!");
+                dtpExpiration.Value = DateTime.Now.AddDays(DateTime.Now.Day + 7);
+            }
+        }
+
+        private void cbbType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbbType.Text == "Aboard")
             {
@@ -114,21 +133,6 @@ namespace E_Tour
             }
         }
 
-        void loadData()
-        {
-            lblExpiration.Visible = false;
-            dtpExpiration.Visible = false;
-            lblExpiration.Text = "Citizen ID";
-        }
 
-        private void dtpExpiration_ValueChanged(object sender, EventArgs e)
-        {
-            double day = dtpExpiration.Value.Subtract(DateTime.Now).TotalDays;
-            if (day < 7)
-            {
-                MessageBox.Show("The date of Expiration must be higher than 7 days", "Failure !!!");
-                dtpExpiration.Value = DateTime.Now.AddDays(DateTime.Now.Day + 7);
-            }
-        }
     }
 }
