@@ -113,6 +113,16 @@ namespace E_Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_sign_up_2x {
+            get {
+                object obj = ResourceManager.GetObject("background_sign_up@2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginBackground_2x {
             get {
                 object obj = ResourceManager.GetObject("loginBackground@2x", resourceCulture);
