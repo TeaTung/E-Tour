@@ -212,6 +212,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="resources\background_sign_up%402x.png" />
     <None Include="resources\Artboard%402x.png" />
     <None Include="resources\Untitled.png" />
     <None Include="resources\1828778.png" />

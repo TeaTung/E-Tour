@@ -30,7 +30,6 @@ namespace E_Tour
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signupForm));
             this.loginBtn = new Guna.UI2.WinForms.Guna2Button();
             this.txbPassword = new Guna.UI.WinForms.GunaLineTextBox();
             this.txbUserName = new Guna.UI.WinForms.GunaLineTextBox();
@@ -60,7 +59,7 @@ namespace E_Tour
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.HoverState.Parent = this.loginBtn;
-            this.loginBtn.Location = new System.Drawing.Point(827, 609);
+            this.loginBtn.Location = new System.Drawing.Point(827, 607);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.ShadowDecoration.Parent = this.loginBtn;
             this.loginBtn.Size = new System.Drawing.Size(138, 48);
@@ -77,11 +76,11 @@ namespace E_Tour
             this.txbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbPassword.HideSelection = false;
             this.txbPassword.LineColor = System.Drawing.Color.Gainsboro;
-            this.txbPassword.Location = new System.Drawing.Point(522, 220);
+            this.txbPassword.Location = new System.Drawing.Point(568, 220);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '●';
             this.txbPassword.SelectedText = "";
-            this.txbPassword.Size = new System.Drawing.Size(360, 45);
+            this.txbPassword.Size = new System.Drawing.Size(300, 45);
             this.txbPassword.TabIndex = 2;
             this.txbPassword.Text = "Password";
             this.txbPassword.UseSystemPasswordChar = true;
@@ -95,11 +94,11 @@ namespace E_Tour
             this.txbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbUserName.HideSelection = false;
             this.txbUserName.LineColor = System.Drawing.Color.Gainsboro;
-            this.txbUserName.Location = new System.Drawing.Point(520, 120);
+            this.txbUserName.Location = new System.Drawing.Point(568, 120);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.PasswordChar = '\0';
             this.txbUserName.SelectedText = "";
-            this.txbUserName.Size = new System.Drawing.Size(360, 45);
+            this.txbUserName.Size = new System.Drawing.Size(300, 45);
             this.txbUserName.TabIndex = 1;
             this.txbUserName.Text = "User Name";
             // 
@@ -112,11 +111,11 @@ namespace E_Tour
             this.txbAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbAddress.HideSelection = false;
             this.txbAddress.LineColor = System.Drawing.Color.Gainsboro;
-            this.txbAddress.Location = new System.Drawing.Point(522, 420);
+            this.txbAddress.Location = new System.Drawing.Point(932, 320);
             this.txbAddress.Name = "txbAddress";
             this.txbAddress.PasswordChar = '\0';
             this.txbAddress.SelectedText = "";
-            this.txbAddress.Size = new System.Drawing.Size(360, 45);
+            this.txbAddress.Size = new System.Drawing.Size(300, 45);
             this.txbAddress.TabIndex = 4;
             this.txbAddress.Text = "Address";
             // 
@@ -129,11 +128,11 @@ namespace E_Tour
             this.txbPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbPhoneNumber.HideSelection = false;
             this.txbPhoneNumber.LineColor = System.Drawing.Color.Gainsboro;
-            this.txbPhoneNumber.Location = new System.Drawing.Point(522, 520);
+            this.txbPhoneNumber.Location = new System.Drawing.Point(932, 220);
             this.txbPhoneNumber.Name = "txbPhoneNumber";
             this.txbPhoneNumber.PasswordChar = '\0';
             this.txbPhoneNumber.SelectedText = "";
-            this.txbPhoneNumber.Size = new System.Drawing.Size(360, 45);
+            this.txbPhoneNumber.Size = new System.Drawing.Size(300, 45);
             this.txbPhoneNumber.TabIndex = 5;
             this.txbPhoneNumber.Text = "Phone Numer";
             this.txbPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneTb_KeyPress);
@@ -147,11 +146,11 @@ namespace E_Tour
             this.txbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbEmail.HideSelection = false;
             this.txbEmail.LineColor = System.Drawing.Color.Gainsboro;
-            this.txbEmail.Location = new System.Drawing.Point(522, 320);
+            this.txbEmail.Location = new System.Drawing.Point(568, 320);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.PasswordChar = '\0';
             this.txbEmail.SelectedText = "";
-            this.txbEmail.Size = new System.Drawing.Size(360, 45);
+            this.txbEmail.Size = new System.Drawing.Size(300, 45);
             this.txbEmail.TabIndex = 3;
             this.txbEmail.Text = "Email";
             // 
@@ -181,11 +180,11 @@ namespace E_Tour
             this.txbCitizenID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbCitizenID.HideSelection = false;
             this.txbCitizenID.LineColor = System.Drawing.Color.Gainsboro;
-            this.txbCitizenID.Location = new System.Drawing.Point(908, 420);
+            this.txbCitizenID.Location = new System.Drawing.Point(568, 420);
             this.txbCitizenID.Name = "txbCitizenID";
             this.txbCitizenID.PasswordChar = '\0';
             this.txbCitizenID.SelectedText = "";
-            this.txbCitizenID.Size = new System.Drawing.Size(360, 45);
+            this.txbCitizenID.Size = new System.Drawing.Size(300, 45);
             this.txbCitizenID.TabIndex = 9;
             this.txbCitizenID.Text = "Citizen ID";
             // 
@@ -198,11 +197,11 @@ namespace E_Tour
             this.txbFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbFullName.HideSelection = false;
             this.txbFullName.LineColor = System.Drawing.Color.Gainsboro;
-            this.txbFullName.Location = new System.Drawing.Point(908, 120);
+            this.txbFullName.Location = new System.Drawing.Point(932, 120);
             this.txbFullName.Name = "txbFullName";
             this.txbFullName.PasswordChar = '\0';
             this.txbFullName.SelectedText = "";
-            this.txbFullName.Size = new System.Drawing.Size(360, 45);
+            this.txbFullName.Size = new System.Drawing.Size(300, 45);
             this.txbFullName.TabIndex = 6;
             this.txbFullName.Text = "Full Name";
             // 
@@ -213,14 +212,15 @@ namespace E_Tour
             this.dtpExpiration.BorderThickness = 2;
             this.dtpExpiration.CheckedState.Parent = this.dtpExpiration;
             this.dtpExpiration.FillColor = System.Drawing.Color.White;
+            this.dtpExpiration.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.dtpExpiration.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpExpiration.HoverState.Parent = this.dtpExpiration;
-            this.dtpExpiration.Location = new System.Drawing.Point(908, 529);
+            this.dtpExpiration.Location = new System.Drawing.Point(568, 533);
             this.dtpExpiration.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpExpiration.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpExpiration.Name = "dtpExpiration";
             this.dtpExpiration.ShadowDecoration.Parent = this.dtpExpiration;
-            this.dtpExpiration.Size = new System.Drawing.Size(228, 36);
+            this.dtpExpiration.Size = new System.Drawing.Size(300, 36);
             this.dtpExpiration.TabIndex = 10;
             this.dtpExpiration.Value = new System.DateTime(2021, 5, 7, 8, 35, 4, 802);
             this.dtpExpiration.Visible = false;
@@ -229,10 +229,11 @@ namespace E_Tour
             // lblExpiration
             // 
             this.lblExpiration.AutoSize = true;
-            this.lblExpiration.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpiration.Location = new System.Drawing.Point(914, 503);
+            this.lblExpiration.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblExpiration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblExpiration.Location = new System.Drawing.Point(567, 496);
             this.lblExpiration.Name = "lblExpiration";
-            this.lblExpiration.Size = new System.Drawing.Size(93, 23);
+            this.lblExpiration.Size = new System.Drawing.Size(108, 25);
             this.lblExpiration.TabIndex = 88;
             this.lblExpiration.Text = "Expiration";
             this.lblExpiration.Visible = false;
@@ -246,18 +247,18 @@ namespace E_Tour
             this.cbbGender.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbGender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbGender.FocusedState.Parent = this.cbbGender;
-            this.cbbGender.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.cbbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbbGender.HoverState.Parent = this.cbbGender;
             this.cbbGender.ItemHeight = 30;
             this.cbbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
             this.cbbGender.ItemsAppearance.Parent = this.cbbGender;
-            this.cbbGender.Location = new System.Drawing.Point(908, 229);
+            this.cbbGender.Location = new System.Drawing.Point(932, 431);
             this.cbbGender.Name = "cbbGender";
             this.cbbGender.ShadowDecoration.Parent = this.cbbGender;
-            this.cbbGender.Size = new System.Drawing.Size(360, 36);
+            this.cbbGender.Size = new System.Drawing.Size(300, 36);
             this.cbbGender.TabIndex = 7;
             // 
             // cbbType
@@ -269,38 +270,40 @@ namespace E_Tour
             this.cbbType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbType.FocusedState.Parent = this.cbbType;
-            this.cbbType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.cbbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbbType.HoverState.Parent = this.cbbType;
             this.cbbType.ItemHeight = 30;
             this.cbbType.Items.AddRange(new object[] {
             "Aboard",
             "Home"});
             this.cbbType.ItemsAppearance.Parent = this.cbbType;
-            this.cbbType.Location = new System.Drawing.Point(908, 329);
+            this.cbbType.Location = new System.Drawing.Point(932, 533);
             this.cbbType.Name = "cbbType";
             this.cbbType.ShadowDecoration.Parent = this.cbbType;
-            this.cbbType.Size = new System.Drawing.Size(360, 36);
+            this.cbbType.Size = new System.Drawing.Size(300, 36);
             this.cbbType.TabIndex = 8;
             this.cbbType.SelectedIndexChanged += new System.EventHandler(this.cbbType_SelectedIndexChanged_1);
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(914, 203);
+            this.gunaLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel1.Location = new System.Drawing.Point(931, 496);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(72, 23);
+            this.gunaLabel1.Size = new System.Drawing.Size(83, 25);
             this.gunaLabel1.TabIndex = 91;
             this.gunaLabel1.Text = "Gender";
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(914, 303);
+            this.gunaLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel2.Location = new System.Drawing.Point(931, 401);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(105, 23);
+            this.gunaLabel2.Size = new System.Drawing.Size(123, 25);
             this.gunaLabel2.TabIndex = 92;
             this.gunaLabel2.Text = "Guest Type";
             // 
@@ -309,7 +312,7 @@ namespace E_Tour
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::E_Tour.Properties.Resources.background_sign_up_2x;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.gunaLabel2);

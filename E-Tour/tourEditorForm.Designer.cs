@@ -54,7 +54,6 @@ namespace E_Tour
             this.dgvNotPaid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txbCustomerId = new Guna.UI2.WinForms.Guna2TextBox();
             this.findPaid = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvAvailableTour = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dtpStartDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txbNumberOfTicket = new Guna.UI2.WinForms.Guna2TextBox();
@@ -387,7 +386,7 @@ namespace E_Tour
             this.txbCustomerId.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCustomerId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbCustomerId.HoverState.Parent = this.txbCustomerId;
-            this.txbCustomerId.Location = new System.Drawing.Point(1000, 97);
+            this.txbCustomerId.Location = new System.Drawing.Point(1000, 90);
             this.txbCustomerId.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbCustomerId.Name = "txbCustomerId";
             this.txbCustomerId.PasswordChar = '\0';
@@ -409,23 +408,13 @@ namespace E_Tour
             this.findPaid.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.findPaid.ForeColor = System.Drawing.Color.White;
             this.findPaid.HoverState.Parent = this.findPaid;
-            this.findPaid.Location = new System.Drawing.Point(1186, 97);
+            this.findPaid.Location = new System.Drawing.Point(1186, 89);
             this.findPaid.Name = "findPaid";
             this.findPaid.ShadowDecoration.Parent = this.findPaid;
             this.findPaid.Size = new System.Drawing.Size(73, 36);
             this.findPaid.TabIndex = 34;
             this.findPaid.Text = "Find";
             this.findPaid.Click += new System.EventHandler(this.findPaid_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 24);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Tour Type";
             // 
             // dgvAvailableTour
             // 
@@ -624,7 +613,6 @@ namespace E_Tour
             this.Controls.Add(this.txbTourDetail);
             this.Controls.Add(this.dtpStartDate);
             this.Controls.Add(this.dgvAvailableTour);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.findPaid);
             this.Controls.Add(this.txbCustomerId);
             this.Controls.Add(this.dgvNotPaid);
@@ -663,7 +651,6 @@ namespace E_Tour
         private Guna.UI2.WinForms.Guna2DataGridView dgvNotPaid;
         private Guna.UI2.WinForms.Guna2TextBox txbCustomerId;
         private Guna.UI2.WinForms.Guna2Button findPaid;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvAvailableTour;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpStartDate;
         private Guna.UI2.WinForms.Guna2TextBox txbNumberOfTicket;
