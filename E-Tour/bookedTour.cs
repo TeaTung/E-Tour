@@ -251,6 +251,8 @@ namespace E_Tour
                 }
 
                 lblReturnMoney.Text = returnMoney.ToString();
+                btnConfirm.Visible = true;
+                btnReturnTicket.Visible = false;
             }
         }
     }

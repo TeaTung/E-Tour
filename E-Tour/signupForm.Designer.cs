@@ -290,7 +290,7 @@ namespace E_Tour
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(931, 496);
+            this.gunaLabel1.Location = new System.Drawing.Point(933, 403);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(83, 25);
             this.gunaLabel1.TabIndex = 91;
@@ -301,7 +301,7 @@ namespace E_Tour
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLabel2.Location = new System.Drawing.Point(931, 401);
+            this.gunaLabel2.Location = new System.Drawing.Point(933, 505);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(123, 25);
             this.gunaLabel2.TabIndex = 92;

@@ -62,6 +62,7 @@ namespace E_Tour
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.cbbTourType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotPaid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableTour)).BeginInit();
@@ -599,6 +600,23 @@ namespace E_Tour
             this.cbbTourType.Size = new System.Drawing.Size(182, 36);
             this.cbbTourType.TabIndex = 92;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnLogout.CheckedState.Parent = this.btnLogout;
+            this.btnLogout.HoverState.ImageSize = new System.Drawing.Size(45, 45);
+            this.btnLogout.HoverState.Parent = this.btnLogout;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageRotate = 0F;
+            this.btnLogout.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnLogout.Location = new System.Drawing.Point(1214, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.PressedState.ImageSize = new System.Drawing.Size(45, 45);
+            this.btnLogout.PressedState.Parent = this.btnLogout;
+            this.btnLogout.Size = new System.Drawing.Size(45, 45);
+            this.btnLogout.TabIndex = 93;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // tourEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,6 +625,7 @@ namespace E_Tour
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.cbbTourType);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.ckbSale);
@@ -659,5 +678,6 @@ namespace E_Tour
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnReset;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTourType;
+        private Guna.UI2.WinForms.Guna2ImageButton btnLogout;
     }
 }

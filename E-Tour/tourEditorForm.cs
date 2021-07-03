@@ -427,5 +427,12 @@ namespace E_Tour
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == 8);
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm booked = new loginForm();
+            booked.ShowDialog();
+        }
     }
 }
