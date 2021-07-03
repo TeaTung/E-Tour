@@ -33,6 +33,7 @@ namespace E_Tour
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bookingForm));
             this.cbbDeparture = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbDestination = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpStartDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -65,6 +66,7 @@ namespace E_Tour
             this.label10 = new System.Windows.Forms.Label();
             this.btnFind = new Guna.UI2.WinForms.Guna2Button();
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableTour)).BeginInit();
             this.SuspendLayout();
             // 
@@ -541,6 +543,23 @@ namespace E_Tour
             this.btnReset.Text = "Reset";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnLogout.CheckedState.Parent = this.btnLogout;
+            this.btnLogout.HoverState.ImageSize = new System.Drawing.Size(45, 45);
+            this.btnLogout.HoverState.Parent = this.btnLogout;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageRotate = 0F;
+            this.btnLogout.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnLogout.Location = new System.Drawing.Point(1203, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.PressedState.ImageSize = new System.Drawing.Size(45, 45);
+            this.btnLogout.PressedState.Parent = this.btnLogout;
+            this.btnLogout.Size = new System.Drawing.Size(49, 45);
+            this.btnLogout.TabIndex = 110;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // bookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +568,7 @@ namespace E_Tour
             this.BackgroundImage = global::E_Tour.Properties.Resources.Artboard_1_2x;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.lblPrice);
@@ -625,5 +645,6 @@ namespace E_Tour
         private Guna.UI.WinForms.GunaTextBox txbTourDetail;
         private Guna.UI2.WinForms.Guna2Button btnFind;
         private Guna.UI2.WinForms.Guna2Button btnReset;
+        private Guna.UI2.WinForms.Guna2ImageButton btnLogout;
     }
 }
